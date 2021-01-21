@@ -6,6 +6,7 @@ author:
   - name: Jihun NAM
     url: https://github.com/jeerohoon
 date: 01-20-2021
+bibliography: test(covid).bib
 output:
   distill::distill_article:
     self_contained: false
@@ -116,10 +117,7 @@ To add a link to an image, enclose the Markdown for the image in brackets, and t
 
 Reference-style links are a special kind of link that make URLs easier to display and read in Markdown. Reference-style links are constructed in two parts: the part you keep inline with your text and the part you store somewhere else in the file to keep the text easy to read.
 
-In a hole in the ground there lived a hobbit. Not a nasty, dirty, wet hole, filled with the ends
-of worms and an oozy smell, nor yet a dry, bare, sandy hole with nothing in it to sit down on or to
-eat: it was a [hobbit-hole][1], and that means comfort.
+In one example, researchers studied the covid 
+[@bastard_autoantibodies_2020].
 
-[1]: <https://en.wikipedia.org/wiki/Hobbit#Lifestyle> "Hobbit lifestyles"
-
-<a href="https://en.wikipedia.org/wiki/Hobbit#Lifestyle" title="Hobbit lifestyles">hobbit-hole</a>
+##### References
