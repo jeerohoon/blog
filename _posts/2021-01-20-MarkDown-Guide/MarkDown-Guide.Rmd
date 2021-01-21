@@ -1,0 +1,125 @@
+---
+title: "MarkDown Guide"
+description: |
+  This is MarkDown Guide
+author:
+  - name: Jihun NAM
+    url: https://github.com/jeerohoon
+date: 01-20-2021
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# First Level Header
+
+content
+
+## Second Level Header
+
+content
+
+1. This is a first thing
+2. This is a second thing
+3. This is a third thing
+
+- bullet one
+- bullet two
+- bullet three
+  new content1
+  new content2
+  > Blockquotes
+  
+### Official Guide Link
+
+1. You can insert links like this <https://www.markdownguide.org/basic-syntax/>.
+
+2. Or you can insert links like this [my website](https://www.markdownguide.org/basic-syntax/).
+
+3. Or you can insert links with caption like this [my website](https://www.markdownguide.org/basic-syntax/ "Official Guide").
+
+4. Or link for official guide <https://www.markdownguide.org/basic-syntax/>
+
+
+### Important Features
+
+#### Emphasis
+
+1. Bold
+To bold text, add two asterisks or underscores before and after a word or phrase. To bold the middle of a word for emphasis, add two asterisks without spaces around the letters.
+- I just love **bold text**.
+- I just love __bold text__.
+
+2. Italic
+To italicize text, add one asterisk or underscore before and after a word or phrase. To italicize the middle of a word for emphasis, add one asterisk without spaces around the letters.
+- Italicized text is the *cat's meow*.
+- Italicized text is the _cat's meow_.
+- A*cat*meow
+
+3. Bold and Italic
+To emphasize text with bold and italics at the same time, add three asterisks or underscores before and after a word or phrase. To bold and italicize the middle of a word for emphasis, add three asterisks without spaces around the letters.
+- This text is ***really important***.
+- This text is ___really important___.	
+- This text is __*really important*__.	
+- This text is **_really important_**.
+- This is really***very***important text.
+
+#### Emphasis
+
+1. Blockquotes 
+To create a blockquote, add a > in front of a paragraph.
+
+> Dorothy followed her through many of the beautiful rooms in her castle.
+
+2. Blockquotes with Multiple Paragraphs
+Blockquotes can contain multiple paragraphs. Add a > on the blank lines between the paragraphs.
+
+> Dorothy followed her through many of the beautiful rooms in her castle.
+>
+> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+
+3. Nested Blockquotes
+Blockquotes can be nested. Add a >> in front of the paragraph you want to nest.
+
+> Dorothy followed her through many of the beautiful rooms in her castle.
+>
+>> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+
+4. Blockquotes with Other Elements
+Blockquotes can contain other Markdown formatted elements. Not all elements can be used — you’ll need to experiment to see which ones work.
+
+> #### The quarterly results look great!
+>
+> - Revenue was off the chart.
+> - Profits were higher than ever.
+>
+>  *Everything* is going according to **plan**.
+
+#### Images
+
+1. From image file
+To add an image, add an exclamation mark (!), followed by alt text in brackets, and the path or URL to the image asset in parentheses. You can optionally add a title after the URL in the parentheses.
+
+![Test image!](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-01-20-MarkDown-Guide/testimage.jpg "Beach")
+
+2. From link
+To add a link to an image, enclose the Markdown for the image in brackets, and then add the link in parentheses.
+
+[![R STUDIO]("R STUDIO")](https://www.google.com/imgres?imgurl=https%3A%2F%2Fd33wubrfki0l68.cloudfront.net%2F62bcc8535a06077094ca3c29c383e37ad7334311%2Fa263f%2Fassets%2Fimg%2Flogo.svg&imgrefurl=https%3A%2F%2Frstudio.com%2F&tbnid=aOpt7_SeOgPKmM&vet=12ahUKEwj-96-K4avuAhVJBHIKHX-6DbsQMygDegUIARCeAQ..i&docid=0CAiMo3GaSUX8M&w=800&h=281&q=R%20STUDIO&ved=2ahUKEwj-96-K4avuAhVJBHIKHX-6DbsQMygDegUIARCeAQ)
+
+#### Reference-style Links
+
+Reference-style links are a special kind of link that make URLs easier to display and read in Markdown. Reference-style links are constructed in two parts: the part you keep inline with your text and the part you store somewhere else in the file to keep the text easy to read.
+
+In a hole in the ground there lived a hobbit. Not a nasty, dirty, wet hole, filled with the ends
+of worms and an oozy smell, nor yet a dry, bare, sandy hole with nothing in it to sit down on or to
+eat: it was a [hobbit-hole][1], and that means comfort.
+
+[1]: <https://en.wikipedia.org/wiki/Hobbit#Lifestyle> "Hobbit lifestyles"
+
+<a href="https://en.wikipedia.org/wiki/Hobbit#Lifestyle" title="Hobbit lifestyles">hobbit-hole</a>
