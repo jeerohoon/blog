@@ -21,6 +21,8 @@ knitr::opts_chunk$set(echo = FALSE)
 
 The Report on Labour Force in Singapore is an annual report on Singapore’s labour market and it analyses diverse facets of Singapore's labour force. In this post, the chart 6 "Resident labour force by age) in the original report will be evaluated in terms of "clarity" and "aesthetics". Then an alternative graphical presentation that represents more easier to understand the context will be presented and discussed. 
 
+- Original visualisation
+
 ![Figure0 : Original visualisation](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-01-20-Assignment1/chapter6.png)
 
 The original source of the data can be found on page 22 of report: [Report: Labour Force in Singapore 2019](https://stats.mom.gov.sg/Pages/Labour-Force-In-Singapore-2019.aspx)
