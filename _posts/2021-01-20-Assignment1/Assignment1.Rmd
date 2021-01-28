@@ -96,7 +96,7 @@ The data is available at <https://stats.mom.gov.sg/Pages/Labour-Force-Tables2019
 
 All the charts we designed above were rearranged for one cleaned dashboard
 ![Figure5 : Final Dashboard](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-01-20-Assignment1/Figure5_final_dashboard2.png)
-
+[Figure5 : Final Dashboard](https://public.tableau.com/views/Assignment1_final_16118197609310/Dashboard_final?:language=en&:display_count=y&publish=yes&:origin=viz_share_link "lick to link")
 
 ## 4. Step-by-step preparation of visualization 
 
