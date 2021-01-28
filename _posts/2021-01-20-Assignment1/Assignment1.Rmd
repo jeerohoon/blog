@@ -1,11 +1,12 @@
 ---
-title: "Assignment1"
+title: "ISSS608 AY2020-21_T2 Visual Analytic DataViz Makeover1"
 description: |
-  This is Assignment1
+
+  Description: Visualisation and analysis of MOM(Manpower Research and Statistics Department) Report on Labour Force in Singapore 2019
 author:
   - name: Jihun NAM
-    url: https://github.com/jeerohoon
-date: 01-20-2021
+
+date: 01-28-2021
 output:
   distill::distill_article:
     self_contained: false
@@ -16,6 +17,102 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-# 1.0 Overview
+## 1. Overview
 
-hi there
+The Report on Labour Force in Singapore is an annual report on Singapore’s labour market and it analyses diverse facets of Singapore's labour force. In this post, the chart 6 "Resident labour force by age) in the original report will be evaluated in terms of "clarity" and "aesthetics". Then an alternative graphical presentation that represents more easier to understand the context will be presented and discussed. 
+
+![Figure0 : Original visualisation](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-01-20-Assignment1/chapter6.png)
+
+The original source of the data can be found on page 22 of report: [Report: Labour Force in Singapore 2019](https://stats.mom.gov.sg/Pages/Labour-Force-In-Singapore-2019.aspx)
+
+The data is available at <https://stats.mom.gov.sg/Pages/Labour-Force-Tables2019.aspx>, and below three datasets were used for analysis.
+
+- [Table2: Key Characteristics of Resident Labour Force, 2009 - 2019 (June)](https://stats.mom.gov.sg/iMAS_Tables1/LabourForce/LabourForce_2019/mrsd_2019LabourForce_T2.xlsx)
+- [Table5: Resident Labour Force Participation Rate by Age and Sex, 2009 - 2019 (June)](https://stats.mom.gov.sg/iMAS_Tables1/LabourForce/LabourForce_2019/mrsd_2019LabourForce_T5.xlsx)
+- [Table7: Resident Labour Force Aged Fifteen Years and Over by Age and Sex, 2009 - 2019 (June)](https://stats.mom.gov.sg/iMAS_Tables1/LabourForce/LabourForce_2019/mrsd_2019LabourForce_T7.xlsx)
+
+
+## 2. Critiques of the graph
+
+### 2.1. Clarity
+
+1. Missing graphs for illustration
+ - The explanation above this chart illustrates four big things: (1) the share of residents population, (2) LFPR(Labour Force Prticipation Rate), (3) share of resident labour force, (4) Median age of residents. However, information of (3) and (4) is displayed in the chart and other two are merely stated in words. 
+ - Especially, (1) the share of residents population by age is mentioned only with footnotes, so it is difficult to understand and match the other data. Also, LFPR graph is not shown in this chart, so understanding the trend of changes of LFPR is difficult.
+
+2. Missing data for comparison
+ - To compare the data accurately, all the data sets should be ready for use. Closely looking into LFPR data set (Table 5), LFPR of 55 & over age group data does not exist. Therefore, we cannot use the figures of 55 & over age group to compare with the share of residents population. To make all the data sets in the same format, the share of residents population data set should be divided into four age groups, 15-24, 25-54, 55-64, and 65&over. 
+ 
+3. Inappropriate usage of graph
+ - The median age of residents data between two years(2009 and 2019) are being displayed with dotted lines. However, because the figures of median age are continuous values, putting the dotted lines on categorical variables (age groups) is inappropriate.
+
+### 2.2. Aesthetics
+
+1. Selection of graph 
+ - In this chart, line graphs are used to show changes of the share of resident labour force by age. However, it is hard to understand how amounts of the share among the age groups were changed. 
+
+
+2. Highlighting of important message
+ - In order to make readers understand easier, at least this chart needs to highlight important figures to deliever clearer message. Even the table bellow the line graphs show that the figures of the share of each age group, readers can not easily sum up the figures to evaluate the differences between two fiscal years.
+
+3. Labelling and captions
+ - "June 20xx" labels are inserted multiple times unnecessarily. The duplicated labels can be removed to make the chart much simpler.
+ - "Per Cent" caption should be placed within the graph.
+ - "Source" and "Note" bellow the charts are not aligned, in terms of format.
+
+
+## 3. Alternative suggestion of the graph
+
+### 3.1. Sktechs of graphical presentation and advantages
+
+1. Scratch1 - The share of residents population
+- The first key message to convey is the change in the share of residents population. Bellow box plot clearly shows that the changes in shares of resident population among the age groups and between two years(2009 and 2019).
+
+![Figure1 : scatch1](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-01-20-Assignment1/Figure1.png){width=70%}
+
+2. Scratch2 - LFPR by age
+- In addition, the second key message to deliver is the change in LFPR (Labour Force Participation Rate). Bellow box plot also clearly displays the changes in LFPR among the age groups and between two years.
+
+![Figure2 : scatch1](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-01-20-Assignment1/Figure2.png){width=70%}
+
+3. Scratch3 - The share of resident labour force
+ - The chart bellow Figure3 represents the portion of changes of the share of resident labour force between 2009 and 2019. 
+ 
+![Figure3 : scatch3](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-01-20-Assignment1/Figure3.png){width=70%}
+
+4. Scratch4 - Median age of residents
+ - The change of median age of residents in the labour force between 2009 and 2019 can be shown clearer with line graph. 
+ 
+![Figure4 : scatch4](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-01-20-Assignment1/Figure4.png){width=70%}
+
+### 3.2. Final dashboard of visualisation using Tableau.
+
+
+![Figure5 : Final Dashboard](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-01-20-Assignment1/Figure5_final_dashboard2.png)
+
+### 3.3. Step-by-step preparation of visualization 
+
+1. Preparation of data sets
+
+#### 1) Resident labour force participation rate by age
+  - The data can be used in Table5 (Resident Labour Force Participation Rate by Age and Sex, 2009 - 2019 (June))
+
+
+#### 2) The share of resident labor force
+  - The data can be extracted in Table7 (Resident Labour Force Aged Fifteen Years and Over by Age and Sex, 2009 - 2019 (June)) 
+
+
+#### 3) The share of residents population by age
+  - In order to get the figures of the share of residents population, Table7 and Table5 are used for counter-calculation.
+  - The population figures are calculated by dividing "Resident labour force(Table7)" by "Resident labour force participation rate(Table5)"
+
+#### 4) The Median age of labour force
+  - The data is available in Table2 (Key Characteristics of Resident Labour Force, 2009 - 2019)
+
+2. Upload integrated data set in Tableau
+
+![Figure6 : integrated dataset](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-01-20-Assignment1/Figure6_integrateddata.png){width=70%}
+
+3. 
+
+## 5. Major observations
