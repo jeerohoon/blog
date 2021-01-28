@@ -116,7 +116,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["Assignment1_files/anchor-4.2.2/anchor.min.js","Assignment1_files/bowser-1.9.3/bowser.min.js","Assignment1_files/distill-2.2.21/template.v2.js","Assignment1_files/header-attrs-2.6/header-attrs.js","Assignment1_files/jquery-1.11.3/jquery.min.js","Assignment1_files/webcomponents-2.0.0/webcomponents.js","chapter6.png","Figure1.png","Figure2.png","Figure3.png","Figure4.png","Figure5_final_dashboard2.png","Figure6_integrateddata.png"]}
+  {"type":"character","attributes":{},"value":["Assignment1_files/anchor-4.2.2/anchor.min.js","Assignment1_files/bowser-1.9.3/bowser.min.js","Assignment1_files/distill-2.2.21/template.v2.js","Assignment1_files/header-attrs-2.6/header-attrs.js","Assignment1_files/jquery-1.11.3/jquery.min.js","Assignment1_files/webcomponents-2.0.0/webcomponents.js","chapter6.png","Dashboard_step.png","Figure1.png","Figure2.png","Figure3.png","Figure4.png","Figure5_final_dashboard2.png","Figure6_integrateddata.png","Median_step.png","population_step.png","share_labourforce_step.png","table_step.png"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2053,6 +2053,9 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="d-article">
 <h2 id="overview">1. Overview</h2>
 <p>The Report on Labour Force in Singapore is an annual report on Singapore’s labour market and it analyses diverse facets of Singapore’s labour force. In this post, the chart 6 “Resident labour force by age) in the original report will be evaluated in terms of”clarity" and “aesthetics”. Then an alternative graphical presentation that represents more easier to understand the context will be presented and discussed.</p>
+<ul>
+<li>Original chart</li>
+</ul>
 <figure>
 <img src="chapter6.png" alt="Figure0 : Original visualisation" /><figcaption aria-hidden="true">Figure0 : Original visualisation</figcaption>
 </figure>
@@ -2065,41 +2068,30 @@ document.addEventListener('DOMContentLoaded', function() {
 </ul>
 <h2 id="critiques-of-the-graph">2. Critiques of the graph</h2>
 <h3 id="clarity">2.1. Clarity</h3>
-<ol type="1">
-<li>Missing graphs for illustration</li>
-</ol>
+<h4 id="missing-graphs-for-illustration">1) Missing graphs for illustration</h4>
 <ul>
 <li>The explanation above this chart illustrates four big things: (1) the share of residents population, (2) LFPR(Labour Force Prticipation Rate), (3) share of resident labour force, (4) Median age of residents. However, information of (3) and (4) is displayed in the chart and other two are merely stated in words.</li>
 <li>Especially, (1) the share of residents population by age is mentioned only with footnotes, so it is difficult to understand and match the other data. Also, LFPR graph is not shown in this chart, so understanding the trend of changes of LFPR is difficult.</li>
 </ul>
-<ol start="2" type="1">
-<li>Missing data for comparison</li>
-</ol>
+<h4 id="missing-data-for-comparison">2) Missing data for comparison</h4>
 <ul>
 <li>To compare the data accurately, all the data sets should be ready for use. Closely looking into LFPR data set (Table 5), LFPR of 55 &amp; over age group data does not exist. Therefore, we cannot use the figures of 55 &amp; over age group to compare with the share of residents population. To make all the data sets in the same format, the share of residents population data set should be divided into four age groups, 15-24, 25-54, 55-64, and 65&amp;over.</li>
 </ul>
-<ol start="3" type="1">
-<li>Inappropriate usage of graph</li>
-</ol>
+<h4 id="inappropriate-usage-of-graph">3) Inappropriate usage of graph</h4>
 <ul>
 <li>The median age of residents data between two years(2009 and 2019) are being displayed with dotted lines. However, because the figures of median age are continuous values, putting the dotted lines on categorical variables (age groups) is inappropriate.</li>
 </ul>
 <h3 id="aesthetics">2.2. Aesthetics</h3>
-<ol type="1">
-<li>Selection of graph</li>
-</ol>
+<h4 id="selection-of-graph">1) Selection of graph</h4>
 <ul>
 <li>In this chart, line graphs are used to show changes of the share of resident labour force by age. However, it is hard to understand how amounts of the share among the age groups were changed.</li>
 </ul>
-<ol start="2" type="1">
-<li>Highlighting of important message</li>
-</ol>
+<h4 id="highlighting-of-important-message">2) Highlighting of important message</h4>
 <ul>
-<li>In order to make readers understand easier, at least this chart needs to highlight important figures to deliever clearer message. Even the table bellow the line graphs show that the figures of the share of each age group, readers can not easily sum up the figures to evaluate the differences between two fiscal years.</li>
+<li>In order to make readers understand easier, at least this chart needs to highlight important figures to deliever clearer message.</li>
+<li>Even the table bellow the line graphs show that the figures of the share of each age group, readers can not easily sum up the figures to evaluate the differences between two fiscal years.</li>
 </ul>
-<ol start="3" type="1">
-<li>Labelling and captions</li>
-</ol>
+<h4 id="labelling-and-captions">3) Labelling and captions</h4>
 <ul>
 <li>“June 20xx” labels are inserted multiple times unnecessarily. The duplicated labels can be removed to make the chart much simpler.</li>
 <li>“Per Cent” caption should be placed within the graph.</li>
@@ -2107,71 +2099,154 @@ document.addEventListener('DOMContentLoaded', function() {
 </ul>
 <h2 id="alternative-suggestion-of-the-graph">3. Alternative suggestion of the graph</h2>
 <h3 id="sktechs-of-graphical-presentation-and-advantages">3.1. Sktechs of graphical presentation and advantages</h3>
-<ol type="1">
-<li>Scratch1 - The share of residents population</li>
-</ol>
+<h4 id="sketch1---the-share-of-residents-population">1) Sketch1 - The share of residents population</h4>
 <ul>
 <li>The first key message to convey is the change in the share of residents population. Bellow box plot clearly shows that the changes in shares of resident population among the age groups and between two years(2009 and 2019).</li>
 </ul>
 <figure>
-<img src="Figure1.png" style="width:70.0%" alt="Figure1 : scatch1" /><figcaption aria-hidden="true">Figure1 : scatch1</figcaption>
+<img src="Figure1.png" style="width:70.0%" alt="Figure1 : Sketch1" /><figcaption aria-hidden="true">Figure1 : Sketch1</figcaption>
 </figure>
-<ol start="2" type="1">
-<li>Scratch2 - LFPR by age</li>
-</ol>
+<h4 id="sketch2---lfpr-by-age">2) Sketch2 - LFPR by age</h4>
 <ul>
 <li>In addition, the second key message to deliver is the change in LFPR (Labour Force Participation Rate). Bellow box plot also clearly displays the changes in LFPR among the age groups and between two years.</li>
 </ul>
 <figure>
-<img src="Figure2.png" style="width:70.0%" alt="Figure2 : scatch1" /><figcaption aria-hidden="true">Figure2 : scatch1</figcaption>
+<img src="Figure2.png" style="width:70.0%" alt="Figure2 : Sketch2" /><figcaption aria-hidden="true">Figure2 : Sketch2</figcaption>
 </figure>
-<ol start="3" type="1">
-<li>Scratch3 - The share of resident labour force</li>
-</ol>
+<h4 id="sketch3---the-share-of-resident-labour-force">3) Sketch3 - The share of resident labour force</h4>
 <ul>
 <li>The chart bellow Figure3 represents the portion of changes of the share of resident labour force between 2009 and 2019.</li>
 </ul>
 <figure>
-<img src="Figure3.png" style="width:70.0%" alt="Figure3 : scatch3" /><figcaption aria-hidden="true">Figure3 : scatch3</figcaption>
+<img src="Figure3.png" style="width:70.0%" alt="Figure3 : Sketch3" /><figcaption aria-hidden="true">Figure3 : Sketch3</figcaption>
 </figure>
-<ol start="4" type="1">
-<li>Scratch4 - Median age of residents</li>
-</ol>
+<h4 id="sketch4---median-age-of-residents">4) Sketch4 - Median age of residents</h4>
 <ul>
 <li>The change of median age of residents in the labour force between 2009 and 2019 can be shown clearer with line graph.</li>
 </ul>
 <figure>
-<img src="Figure4.png" style="width:70.0%" alt="Figure4 : scatch4" /><figcaption aria-hidden="true">Figure4 : scatch4</figcaption>
+<img src="Figure4.png" style="width:70.0%" alt="Figure4 : Sketch4" /><figcaption aria-hidden="true">Figure4 : Sketch4</figcaption>
 </figure>
 <h3 id="final-dashboard-of-visualisation-using-tableau.">3.2. Final dashboard of visualisation using Tableau.</h3>
+<p>All the charts we designed above were rearranged for one cleaned dashboard <img src="Figure5_final_dashboard2.png" alt="Figure5 : Final Dashboard" /></p>
+<h2 id="step-by-step-preparation-of-visualization">4. Step-by-step preparation of visualization</h2>
+<h3 id="preparation-for-data-sets">4.1. Preparation for data sets</h3>
+<table>
+<colgroup>
+<col style="width: 56%" />
+<col style="width: 43%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Data set</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1) Resident labour force participation rate by age</td>
+<td>Table5 (Resident Labour Force Participation Rate by Age and Sex, 2009 - 2019 (June))</td>
+</tr>
+<tr class="even">
+<td>2) The share of resident labor force</td>
+<td>Table7 (Resident Labour Force Aged Fifteen Years and Over by Age and Sex, 2009 - 2019 (June))</td>
+</tr>
+<tr class="odd">
+<td>3) The share of residents population by age</td>
+<td>Table7 and Table5 are used for counter-calculation. The population figures are calculated by dividing “Resident labour force(Table7)” by “Resident labour force participation rate(Table5)”</td>
+</tr>
+<tr class="even">
+<td>4) The Median age of labour force</td>
+<td>Table2 (Key Characteristics of Resident Labour Force, 2009 - 2019)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="upload-integrated-data-set-in-tableau">4.2. Upload integrated data set in Tableau</h3>
+<ul>
+<li>After pivoting and merging all the data sets using excel, the integrated data set is imported via Tableau</li>
+</ul>
 <figure>
-<img src="Figure5_final_dashboard2.png" alt="Figure5 : Final Dashboard" /><figcaption aria-hidden="true">Figure5 : Final Dashboard</figcaption>
+<img src="Figure6_integrateddata.png" style="width:70.0%" alt="Figure6 : integrated dataset" /><figcaption aria-hidden="true">Figure6 : integrated dataset</figcaption>
 </figure>
-<h3 id="step-by-step-preparation-of-visualization">3.3. Step-by-step preparation of visualization</h3>
+<h3 id="creating-charts">4.3. Creating charts</h3>
+<p>Next, Tableau’s Polaris was used to create the charts</p>
+<h4 id="creating-chart-of-the-share-of-residents-population-and-chart-of-lfpr-by-age">1) Creating chart of the share of residents population and chart of LFPR by age</h4>
+<figure>
+<img src="population_step.png" alt="Figure7 : Share of residents population and LFPR by age" /><figcaption aria-hidden="true">Figure7 : Share of residents population and LFPR by age</figcaption>
+</figure>
+<blockquote>
 <ol type="1">
-<li>Preparation of data sets</li>
+<li>After adding Category, Age, and Year to Columns, drag and drop Percent(: attribute name of all the figures) to Rows.</li>
+<li>Add Age to Filters and check 15-24, 25-54, 55-64, and 65&amp;over.</li>
+<li>Drag and drop Year to Marks &gt; Color and change Marks type from Automatic to Bar.</li>
+<li>In order to show the differnces between 2009 and 2019 values, drag and drop Percent to Rows and change Marks type to Line. Then select dual axis to combine both charts.</li>
+<li>In Marks &gt; SUM(Percent)(2), exclude Year from color and click Color to change line’s color (to red).</li>
+<li>Drag and drop Percent to Label to show the values.</li>
 </ol>
-<h4 id="resident-labour-force-participation-rate-by-age">1) Resident labour force participation rate by age</h4>
-<ul>
-<li>The data can be used in Table5 (Resident Labour Force Participation Rate by Age and Sex, 2009 - 2019 (June))</li>
-</ul>
-<h4 id="the-share-of-resident-labor-force">2) The share of resident labor force</h4>
-<ul>
-<li>The data can be extracted in Table7 (Resident Labour Force Aged Fifteen Years and Over by Age and Sex, 2009 - 2019 (June))</li>
-</ul>
-<h4 id="the-share-of-residents-population-by-age">3) The share of residents population by age</h4>
-<ul>
-<li>In order to get the figures of the share of residents population, Table7 and Table5 are used for counter-calculation.</li>
-<li>The population figures are calculated by dividing “Resident labour force(Table7)” by “Resident labour force participation rate(Table5)”</li>
-</ul>
-<h4 id="the-median-age-of-labour-force">4) The Median age of labour force</h4>
-<ul>
-<li>The data is available in Table2 (Key Characteristics of Resident Labour Force, 2009 - 2019)</li>
-</ul>
-<ol start="2" type="1">
-<li>Upload and integrate data in Tableau <img src="Figure6_integrateddata.png" style="width:70.0%" alt="Figure6 : integrated dataset" /></li>
+</blockquote>
+<h4 id="creating-the-chart-of-the-share-of-resident-labour-force">2) Creating the chart of the share of resident labour force</h4>
+<figure>
+<img src="share_labourforce_step.png" alt="Figure8 : Share of residents Labour force by age" /><figcaption aria-hidden="true">Figure8 : Share of residents Labour force by age</figcaption>
+</figure>
+<blockquote>
+<ol type="1">
+<li>After adding Age to Columns, drag and drop Percent to Rows.</li>
+<li>Add Category and check “Share of the labour force” only.</li>
+<li>Change Marks type to Area and click Analysis &gt; Stack Marks &gt; Off.</li>
+<li>Drag and drop Year to color to differentiate between two years.</li>
+<li>Create a new calculated field named Gaps and type {Exclude [Year]: MIN([Percent]) }.</li>
+<li>Add Gaps to Rows then select dual axis to combine with previous chart.</li>
+<li>Click Marks&gt;color and change Gaps to White with 100% opacity.</li>
+<li>Add Percent to Rows again with Line graph then select dual axis.</li>
 </ol>
+</blockquote>
+<figure>
+<img src="table_step.png" alt="Figure9 : Share of residents Labour force by age (table)" /><figcaption aria-hidden="true">Figure9 : Share of residents Labour force by age (table)</figcaption>
+</figure>
+<blockquote>
+<ol type="1">
+<li>After adding creating the share of labour force worksheet, need to creat a new table to show the figures of each age group.</li>
+<li>Drag and drop Age to Columns and Year to Rows.</li>
+<li>Click Show Me to check Text Tables.</li>
+</ol>
+</blockquote>
+<h4 id="creating-the-chart-of-median-age-of-residents">3) Creating the chart of median age of residents</h4>
+<figure>
+<img src="Median_step.png" alt="Figure10 : Median age of residents" /><figcaption aria-hidden="true">Figure10 : Median age of residents</figcaption>
+</figure>
+<blockquote>
+<ol type="1">
+<li>Drag and drop Year to Columns and Percent to Rows.</li>
+<li>Fillter Category and check Median only.</li>
+<li>Hide and remain only 2009 and 2019 in x-axis.</li>
+</ol>
+</blockquote>
+<h4 id="creating-dashboard-merging-whole-charts">4) Creating dashboard merging whole charts</h4>
+<figure>
+<img src="Dashboard_step.png" alt="Figure11 : Dashboard" /><figcaption aria-hidden="true">Figure11 : Dashboard</figcaption>
+</figure>
+<blockquote>
+<ol type="1">
+<li>Drag and drop Objects&gt;Text on top of the dashboard then type Title and descriptions.</li>
+<li>Put all the worksheets that we made on the dashboard and rearrange the size.</li>
+</ol>
+</blockquote>
 <h2 id="major-observations">5. Major observations</h2>
+<p>Labour force in Singapore is aging</p>
+<h3 id="changes-of-the-share-of-residents-population">5.1. Changes of the share of residents population</h3>
+<ul>
+<li>As illustrated in the statement in original chart, the share of senior population is getting larger than before. The share of residents aged 55-64 and 65&amp;over rose from 14% (2009) to 17% (2019) and from 11% (2009) to 17%(2019), respectively. Whereas, the share of young age groups declined from 59% (2009) to 52% (2019). This fact affects to changes of the share of resident labour force consequently, because the working young population cohorts moving into the senior group.</li>
+</ul>
+<h3 id="changes-of-lfpr">5.2. Changes of LFPR</h3>
+<ul>
+<li>Overall LFPR (Labour Force Participation Rate) rose since 2009, however, among 55-64 and 65&amp;over age group’s increments were relatively huge than 25-54 age cohort. Especially, 65&amp;over cohort’s fluctuation was norteworthy, which means that more seniors take part in work activity than 10 years ago. Also, we can assumes that the fact of big changes of LFPR affects to the share of resident labour force.</li>
+</ul>
+<h3 id="changes-of-the-share-of-resident-labour-force">5.3. Changes of the share of resident labour force</h3>
+<ul>
+<li>Consequently, this whole report and charts were written to explain that Labour force in Singapore is aging. As seen in the dashboard, 9.1% of the shares of resident labour force in aged 55&amp;over, orange colored part in Figure3, rose from 2009 to 2019. As a result, median age of residents in the labour force rose from 41 years in 2009 to 44 years in 2019.</li>
+</ul>
+<h4 id="the-end">The END</h4>
+<hr />
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
