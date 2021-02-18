@@ -1,0 +1,421 @@
+---
+title: "ISSS608 AY2020-21_T2 Visual Analytic DataViz Makeover2"
+description: |
+
+  Description: Visualisation and analysis of willingness of the public on Covid-19 vaccination
+author:
+  - name: Jihun NAM
+  - email: jihun.nam.2020@mitb.sum.edu.sg
+
+date: 02-19-2021
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## 1. Overview
+
+The data 
+
+- Original chart
+
+![Figure0 : Original visualisation](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/Original.png)
+
+
+The original source of the data can be found at [Imperial College London YouGov Covid 19 Behaviour Tracker Data Hub](https://github.com/YouGov-Data/covid-19-tracker)
+
+In this GitHub page, below information and data files were used for analysis.
+
+- [README.md](https://github.com/YouGov-Data/covid-19-tracker/blob/master/README.md)
+- codebook of the core questionnaire [codebook.xlsx](https://github.com/YouGov-Data/covid-19-tracker/blob/master/codebook.xlsx)
+- list of countries with data [countries.csv](https://github.com/YouGov-Data/covid-19-tracker/blob/master/countries.csv)
+- individual country files with respondent-level data [data/country-name.csv](https://github.com/YouGov-Data/covid-19-tracker/tree/master/data)
+
+
+## 2. Critiques of the graph
+
+### 2.1. Clarity
+
+- spelling bistake: vaccination
+
+#### 1) Missing graphs for illustration
+  + The explanation above this chart illustrates four big things: (1) the share of residents population, (2) LFPR(Labour Force Prticipation Rate), (3) share of resident labour force, (4) Median age of residents. However, information of (3) and (4) is displayed in the chart and other two are merely stated in words. 
+  + Especially, (1) the share of residents population by age is mentioned only with footnotes, so it is difficult to understand and match the other data. Also, LFPR graph is not shown in this chart, so understanding the trend of changes of LFPR is difficult.
+
+#### 2) Missing data for comparison
+  + To compare the data accurately, all the data sets should be ready for use. Closely looking into LFPR data set (Table 5), LFPR of 55 & over age group data does not exist. Therefore, we cannot use the figures of 55 & over age group to compare with the share of residents population. To make all the data sets in the same format, the share of residents population data set should be divided into four age groups, 15-24, 25-54, 55-64, and 65&over. 
+ 
+#### 3) Inappropriate usage of graph
+ + The median age of residents data between two years(2009 and 2019) are being displayed with dotted lines. However, because the figures of median age are continuous values, putting the dotted lines on categorical variables (age groups) is inappropriate.
+
+### 2.2. Aesthetics
+
+#### 1) Selection of graph 
+ + In this chart, line graphs are used to show changes of the share of resident labour force by age. However, it is hard to understand how amounts of the share among the age groups were changed. 
+
+
+#### 2) Highlighting of important message
+ + In order to make readers understand easier, at least this chart needs to highlight important figures to deliever clearer message. 
+ + Even the table bellow the line graphs show that the figures of the share of each age group, readers can not easily sum up the figures to evaluate the differences between two fiscal years.
+
+#### 3) Labelling and captions
+ + "June 20xx" labels are inserted multiple times unnecessarily. The duplicated labels can be removed to make the chart much simpler.
+ + "Per Cent" caption should be placed within the graph.
+ + "Source" and "Note" bellow the charts are not aligned, in terms of format.
+
+
+## 3. Alternative suggestion of the graph
+
+### 3.1. Sktechs of graphical presentation and advantages
+
+#### 1) Sketch1 - Dashboard
++ After finding several issues in clarity and aesthetic, we can design a new dashboard to show the survey result clearly. Bellow the left side chart clearly shows that average scores of answers comparing countries. Also the right side chart clearly shows that not only the % of strongly agreed to a certain answer, but also confidence interval ranges.
+
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/sketch.png){width=100%}
+
+
+#### 2) Sketch2 - Tooltip
++ The dataset contains several important attributes, such as gender, week answered, and employment status. Bellow charts are also important that show how the answers are organised. These charts will be displayed when the you hover over to the previous dashboard graph.
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/sketch2.png){width=100%}
+
+### 3.2. Final dashboard of visualisation using Tableau.
+
+All the charts we designed above were rearranged for one cleaned dashboard
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/D.10.png)
+[Figure5 : Final Dashboard](https://public.tableau.com/profile/jihun.nam#!/vizhome/Covid_vaccine_dashboard_age_edit/DashboardFinal?publish=yes "click to link")
+
+## 4. Step-by-step preparation of visualization 
+
+### 4.1. Preparation for data sets
+
+Some individual country files are compressed, so you have to decompress them in csv format.
+
+### 4.2. Upload raw data set in Tableau
+After decompressing all files, data sets are needed to be imported to Tableau.
+
+1. In order to union all the 30 individual country csv files, you need to remove pre-set data set(germany.csv). Then, drag and drop "New Union" to the pane. Next, select all the csv files on the next and drag into the dialog box.
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/1Union.png){width=70%}
+
+2. For the purpose of the analysis, we need to hide unnecessary fields first. Click "Manage Metadata" button then select unnecessary fields. Next, right click and hit "Hide". Leave required fields only as below.
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/2Hide unnessarary fields.png){width=70%}
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/2_2. leave necessary items.png){width=70%}
+
+3. Change name of field of "Table Name" to "Country". Then click  "Aliases" and exclude '.csv'. in all Values on the right side.
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/3Edit Table Name aliases excluding csv and change name of field to Country.png){width=70%}
+
+4. After changing all the name of fields regarding questions, select all the six question fields and right click to pivot the values.
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/4 After changing name of questions fields, pivoting.png){width=70%}
+
+5. Then change pivoted fields' name to "Question" and "Score".
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/4_2 pivoted name change.png){width=50%}
+
+6. Click "Create Group.." in "Age" field. Select all the age instances that you want to group and click "Group" button.
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/6 Make age group.png){width=70%}
+
+7. Go to Sheet1 and drag and drop "Score" into "Filters" pane. Un-check Null values in Score because the values are not necessary to visualise.
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/7_1. go to sheet.png){width=70%}
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/7 Exclude Null values in Score.png){width=70%}
+
+8. Click "Analysis" > "View data" menue and click "Extract All" to get necessary data.
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/8 Click View data and extract necessary dataset.png){width=70%}
+
+### 4.3. Upload cleaned data set in Tableau and create necessary calculated fields for analysis
+
+1. Open new tableau file and connect to the extracted file created above. 
+
+2. Create "Answer" field using "created calculated field" function as below. By using letters not digits, users may not be confused easily.
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/9 Create Answer created calculated field.png){width=70%}
+
+3. It is more intuitive to express positive responses in high numbers. So, change all the score values in reverse order, using "created calculated field" function
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/10 Score(int) change the values.png){width=70%}
+
+### 4.4. Create gantt chart to show the survey results
+
+We need to make a chart so that we can easily recognize the results of the survey at a glance. In order to compare the proportion of respondents easily, we can divide axes and compare them at the same time.
+
+1. Create "Negative Score Values" field, using "created calculated field" function. Note that you should use CNT to calculate the whole number of respondents.
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/11 Create Negative Score Values.png){width=70%}
+
+2. Create "Total Negative Scores" field using "created calculated field" function. You should click "Default Table Calculation" menu and change "Comute using" from Automatic to Answer.
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/12 Create Total Negative Scores.png){width=70%}
+
+3. Create "Total Score" field using "created calculated field" function and click "Default Table Calculation" then change Compute using to "Answer".
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/13 Create Total Score and click default table calculation and choose Answer.png){width=70%}
+
+4. Create "Gantt Start Point" field using "created calculated field" function.
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/14 Create Gantt Start Point.png){width=70%}
+
+5. Click "Gantt Start Point" field and click Compute Using to Answer
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/15 Gantt Start Point change Compute using Answer.png){width=70%}
+
+6. Create "Percentage" field using "created calculated field" function to visualise the size of the gantt chart
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/16 Create Percentage for size of the gantt chart.png){width=70%}
+
+7. Create "Gantt Percentage" field using "created calculated field" function and click "Default Table Calculation" then change Compute using to "Answer".
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/17 Create Gantt Percentage with Compute using Answer.png){width=70%}
+
+8. Drag and drop "Gantt Percetage" field into Columns and "Country" into Rows. Also Drag and drop "Answer".
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/19_new gantt.png){width=70%}
+
+9. Drag and drop "Question" field into "Filter" pane and change the Marks to "Gantt Bar". Lastly, Drag and drop "Percentage" field onto "Size" button to show the percentage of respondents.
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/20_new gantt chart.png){width=70%}
+
+10. Click "Answer" field and "Sort" menu. Check "Manually" in "Sort by" menu and change the order as below
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/20 Gantt chart_2 sort manually.png){width=70%}
+
+11. Create "Avg Score" field using "created calculated field" function. Note that you should use "CNT" field to calculate sum of respondents.
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/21 Create Avg Score field.png){width=70%}
+
+12. Change the Gantt chart color
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/22 Change the Gantt chart color.png){width=70%}
+
+13. Chage Marks to "Circle" and drag and drop "Avg Score" onto "Label" button. Then click and change "Compute using" to cell
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/21. put new.png){width=40%}
+
+14. Click lable and change Font format and alignment as below
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/27 Click lable and change format of Font alignment to central.png){width=70%}
+
+15. Click "Avg Score" in Columns and check "Dual Axis"
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/28 Click Avg Score and check Dual Axis.png){width=70%}
+
+16. Right click above axis and click "Edit axis". Check "Fixed" range for changing the range of axis from 1 to 5
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/29 Edit axis and change the range of axis from 1 to 5.png){width=70%}
+
+17. After changing Size of Circle chart and color to "White"
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/23_new.png){width=70%}
+
+19. Add reference to show "0%" more clearly
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/a.1 add reference 0.png){width=70%}
+
+20. Add reference to show "Average line". Type label "<Computation> Score = <Value>"
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/a.3 add reference new.png){width=70%}
+
+18. The final Gantt chart!
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/25. final gantt chart.png){width=70%}
+
+### 4.5. Create Confidence Interval chart
+
+The number of respondents are different among countries. Therefore, we cannot confidently say that the average scores of answers we have created above reflect correctly the opinion of whole country. For this reason, we can show the "confidence interval range" to give the better information to users. Based on the formula, when the number of sample increases, the range of confidence interval shorten.
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/confidence interval.jpg){width=70%}
+
+1. First of all, we need to create 7 calculated field to visualise confidence level. The formula for the fields are below.
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/CI_field.png){width=70%}
+
+
+> 1.. (CI) No of Strongly agree
+>
+> IF [Answer]="Strongly agree" THEN [CNT] ELSE 0 END
+
+> 2.. (CI) % of Strongly agree
+>
+> SUM([(CI) No of Strongly agree])/SUM([CNT])
+
+> 3.. (CI) Z_95%
+>
+> 1.959964
+
+> 4.. (CI) Prop_SE
+>
+> SQRT(([(CI) % of Strongly agree]*(1-[(CI) % of Strongly agree]))/SUM([CNT]))
+
+> 5.. (CI) Prop_margin of Error 95%
+>
+> [(CI) Z_95%]*[(CI) Prop_SE]
+
+> 6.. (CI) Prop_Upper Limit 95%
+>
+> [(CI) % of Strongly agree] + [(CI) Prop_margin of Error 95%]
+
+> 7.. (CI) Prop_Lower Limit 95%
+>
+> [(CI) % of Strongly agree] - [(CI) Prop_margin of Error 95%]
+
+2. Drag and drop "(CI) % of Strongly agree" field into Columns and "Country" into Rows
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/CI. 1.png){width=70%}
+
+3. Drag and Drop "(CI) Prop_Lower Limit 95%" and "(CI) Prop_Upper Limit 95%" fields onto the column axis.
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/CI.2.png){width=70%}
+4. Change Measure Values graph to "Line" and click left button and change to "Path"
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/CI.3.png){width=70%}
+
+5. Right click on the upper axis and check "Synchronize Axis" 
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/CI.4.png){width=70%}
+
+6. Click "Contry" in Rows and check "Sort" to sort Descending order by "(CI) % of Strongly agree".
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/CI.5.png){width=70%}
+
+7. Add reference line to show average of "(CI) % of Strongly agree" over the countries.  
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/CI.6.png){width=70%}
+
+8. Add tooltip to show the detail figures
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/T.8.png){width=70%}
+
+### 4.6. Create tooltip charts for showing detail of answers
+
+1. Changes of answers through weeks
+
+- Drag and drop "Qweek" into Columns and "Avg Score" into Rows. In order to show the figures, put "Avg Score" onto "Color" and "Label" button in Marks
+- Change chart format to "Line"
+- Add reference line to show the average value of "Avg Score" through week
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/t.1.png){width=70%}
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/t.a.png){width=70%}
+
+2. Answers by Gender
+
+- Drag and drop "Gender" into Columns and "Avg Score" into Rows. In order to show the figures, put "Avg Score" onto "Color" and "Label" button in Marks. 
+- Change chart format to "Bar"
+- Add reference line to show the average value of "Avg Score" through gender
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/T.2.png){width=70%}
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/T.A.png){width=70%}
+
+
+3. Answers by Age
+
+- Drag and drop "Age (Group)" into Columns and "Avg Score" into Rows. In order to show the figures, put "Avg Score" onto "Color" and "Label" button in Marks. 
+- Change chart format to "Bar"
+- Add reference line to show the average value of "Avg Score" through age group
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/T.3.png){width=70%}
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/T.A.png){width=70%}
+
+4. Answers by Employ Status
+
+- Drag and drop "Employ Status" into Columns and "Avg Score" into Rows. In order to show the figures, put "Avg Score" onto "Color" and "Label" button in Marks. 
+- Change chart format to "Bar"
+- Add reference line to show the average value of "Avg Score" through Employ Status
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/T.4.png){width=70%}
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/T.A.png){width=70%}
+
+5. Answers by Household Children
+
+- Drag and drop "Household Children" into Columns and "Avg Score" into Rows. In order to show the figures, put "Avg Score" onto "Color" and "Label" button in Marks. 
+- Change chart format to "Bar"
+- Add reference line to show the average value of "Avg Score" through Household Children
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/T.5.png){width=70%}
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/T.A.png){width=70%}
+
+6. Detailed figures for Country_gantt chart
+- Duplicate "Country_gantt chart" worksheet
+- Remove "AGG(Avg Score)" field in Columns
+- Drag and drop "Percentage" field on "Label" button
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/T.7.png){width=70%}
+
+7. show all tooltip charts when hover over to the "Country_gantt chart"
+- Go back to "Country_gantt chart" worksheet we made ealier, and click Tooltip button in "Marks" > "All"
+- In order to show all the detailed charts, type as below
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/T.6.png){width=70%}
+
+### 4.7. Create Dashboard
+
+1. Click Dashboard icon and change Size to "Automatic"
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/d.11.png){width=70%}
+
+2. Drag and drop "A Text" object to the pane
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/d.1.png){width=70%}
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/d.2.png){width=70%}
+
+3. Drag and drop "CI_Chart" and "Country_gantt" on the pane side by side
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/d.3.png){width=70%}
+
+4. Move "Select question" filter and "Answer" legend above the two charts
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/d.4.png){width=70%}
+
+5. Click triangle and check "Single Value (dropdown)"
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/d.5.png){width=70%}
+
+6. Drag and drop "A Text" object below the "Answer" legend. then type below
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/d.6.png){width=70%}
+
+7. Adjust sizes of boxes we put
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/D.7.png){width=70%}
+
+
+8. Drag and drop two more "A Text" objects between "Answer" label box and two charts. Then type titles for the charts, repectively.
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/d.8.png){width=70%}
+8. Lastly, drag and drop "A Text" objects below the two charts and type data source information.
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/d.9.png){width=70%}
+
+9. The final Dashboard
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/D.10.png){width=70%}
+
+
+## 5. Major observations 
+
+Labour force in Singapore is aging
+
+### 5.1. Changes of the share of residents population
+- As illustrated in the statement in original chart, the share of senior population is getting larger than before. The share of residents aged 55-64 and 65&over rose from 14% (2009) to 17% (2019) and from 11% (2009) to 17%(2019), respectively. Whereas, the share of young age groups declined from 59% (2009) to 52% (2019). This fact affects to changes of the share of resident labour force consequently, because the working young population cohorts moving into the senior group. 
+
+### 5.2. Changes of LFPR
+- Overall LFPR (Labour Force Participation Rate) rose since 2009, however, among 55-64 and 65&over age group's increments were relatively huge than 25-54 age cohort. Especially, 65&over cohort's fluctuation was norteworthy, which means that more seniors take part in work activity than 10 years ago. Also, we can assumes that the fact of big changes of LFPR affects to the share of resident labour force. 
+
+### 5.3. Changes of the share of resident labour force
+- Consequently, this whole report and charts were written to explain that Labour force in Singapore is aging. As seen in the dashboard, 9.1% of the shares of resident labour force in aged 55&over, orange colored part in Figure3, rose from 2009 to 2019. As a result, median age of residents in the labour force rose from 41 years in 2009 to 44 years in 2019.
+
+#### The END
+
+--------------------------------------------------------------------------------------------------------------------
+
