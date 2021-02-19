@@ -20,14 +20,12 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## 1. Overview
 
-The data 
+This post will show how to visualise the result of surveys regarding how people think about Covid-19 vaccination around the world. The original data can be found at [Imperial College London YouGov Covid 19 Behaviour Tracker Data Hub](https://github.com/YouGov-Data/covid-19-tracker)
+Firstly, we will criticize the original charts then show how to make better visualization from the same data set.
 
 - Original chart
 
 ![Figure0 : Original visualisation](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/Original.png)
-
-
-The original source of the data can be found at [Imperial College London YouGov Covid 19 Behaviour Tracker Data Hub](https://github.com/YouGov-Data/covid-19-tracker)
 
 In this GitHub page, below information and data files were used for analysis.
 
@@ -37,36 +35,41 @@ In this GitHub page, below information and data files were used for analysis.
 - individual country files with respondent-level data [data/country-name.csv](https://github.com/YouGov-Data/covid-19-tracker/tree/master/data)
 
 
-## 2. Critiques of the graph
+## 2. Critique of the original charts
 
 ### 2.1. Clarity
 
-- spelling bistake: vaccination
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/y.1.png){width=70%}
 
-#### 1) Missing graphs for illustration
-  + The explanation above this chart illustrates four big things: (1) the share of residents population, (2) LFPR(Labour Force Prticipation Rate), (3) share of resident labour force, (4) Median age of residents. However, information of (3) and (4) is displayed in the chart and other two are merely stated in words. 
-  + Especially, (1) the share of residents population by age is mentioned only with footnotes, so it is difficult to understand and match the other data. Also, LFPR graph is not shown in this chart, so understanding the trend of changes of LFPR is difficult.
+- This chart is a visualisation for a question "If a Covid-19 vaccine were made available to me this week, I would definitely get it". However, the title of this only show the answer of the question. We need to show proper title to clarify the result.
+- This chart is sorted by country name in alphabetical order. Users cannot figure out which country is more pro-vaccine. 
+- Users cannot tell which country is most pro-vaccine or not because the results are visualised using 100% stack bars. It is difficult to show using stack bars, because users should compare all the sizes and values line by line.
+- There is no indicator to compare and sort. We need to create a new value to compare among countries properly.
+- There is a typo error in the title 'pro-vacinne'. It need to be changed to 'pro-vaccine'.
+- "% of Total Record", the title of x-axis should be changed to "Percentage of Total Reocrd"
 
-#### 2) Missing data for comparison
-  + To compare the data accurately, all the data sets should be ready for use. Closely looking into LFPR data set (Table 5), LFPR of 55 & over age group data does not exist. Therefore, we cannot use the figures of 55 & over age group to compare with the share of residents population. To make all the data sets in the same format, the share of residents population data set should be divided into four age groups, 15-24, 25-54, 55-64, and 65&over. 
- 
-#### 3) Inappropriate usage of graph
- + The median age of residents data between two years(2009 and 2019) are being displayed with dotted lines. However, because the figures of median age are continuous values, putting the dotted lines on categorical variables (age groups) is inappropriate.
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/y.2.png){width=70%}
+
+- As we seen above, this chart also regarding a question "If a Covid-19 vaccine were made available to me this week, I would definitely get it". However, the title of this only show the answer of the question. We need to show proper title to clarify the result.
+- With this chart, we cannot see how many of respondents replied to the survey. Therefore, it is hard to say that percent of people in Sweden is higher than that in Canada, in terms of Confidence interval. We need to show the total number of respondents by country to show the result for clarity.
+
 
 ### 2.2. Aesthetics
 
-#### 1) Selection of graph 
- + In this chart, line graphs are used to show changes of the share of resident labour force by age. However, it is hard to understand how amounts of the share among the age groups were changed. 
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/y.1.png){width=70%}
 
+- This chart used 5 different color to show the proportion of each answer. However, the colors are not consistent to show the scale of answers. We need to use the color scheme wisely, grouping the similar sentiment
+- All the countries have lowercase letters. We need to change first letter of country name.
 
-#### 2) Highlighting of important message
- + In order to make readers understand easier, at least this chart needs to highlight important figures to deliever clearer message. 
- + Even the table bellow the line graphs show that the figures of the share of each age group, readers can not easily sum up the figures to evaluate the differences between two fiscal years.
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/y.2.png){width=70%}
 
-#### 3) Labelling and captions
- + "June 20xx" labels are inserted multiple times unnecessarily. The duplicated labels can be removed to make the chart much simpler.
- + "Per Cent" caption should be placed within the graph.
- + "Source" and "Note" bellow the charts are not aligned, in terms of format.
+- We can see a number of countries in a form of bar chart with white background color, so it is not easy to compare by countries. We need to shade each rows to differentiate results.
+- The numbers in x-axis have decimal point. We can eliminate all decimal points which are not needed.
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/y.3.png){width=50%}
+
+- The title of legend is not appropriate, because users cannot understand properly with 'Vac 1'.
+- The legend for the charts only shows the scale of 1 and 5. To make the legend clearer, we need to show all the proper title of the legend
 
 
 ## 3. Alternative suggestion of the graph
@@ -74,22 +77,28 @@ In this GitHub page, below information and data files were used for analysis.
 ### 3.1. Sktechs of graphical presentation and advantages
 
 #### 1) Sketch1 - Dashboard
-+ After finding several issues in clarity and aesthetic, we can design a new dashboard to show the survey result clearly. Bellow the left side chart clearly shows that average scores of answers comparing countries. Also the right side chart clearly shows that not only the % of strongly agreed to a certain answer, but also confidence interval ranges.
 
+- After finding several issues in clarity and aesthetic, we can design a new dashboard to show the survey result clearly. Below the left side chart clearly shows that average scores of answers comparing countries. Also the right side chart clearly shows that not only the percentage of respondents "strongly agreed" to a question, but also confidence interval ranges. 
+* Note that in final dashboard, we will add the total number of respondents by country next to the "% of strongly agreed to vaccination" chart.
+- As seen below, we can put question filter upper position so that users can easily see what about the chart trying to show. Also we can locate legend of "Answer" and "Scale of answer" to show users to see easily.  
 
 ![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/sketch.png){width=100%}
 
+#### 2) Sketch2 - Tooltips
 
-#### 2) Sketch2 - Tooltip
-+ The dataset contains several important attributes, such as gender, week answered, and employment status. Bellow charts are also important that show how the answers are organised. These charts will be displayed when the you hover over to the previous dashboard graph.
+- The dataset contains several important attributes, such as gender, age, answered week, and employment status. Below charts are also important that show how the answers are organised. These charts will be displayed when the you hover over to the previous dashboard graph.
+- By showing the detailed answers by different sub-categories, users can understand easily which factors were affected to the results. 
+- Also, we can add 'Average score' through the chart to compare easily by the sub-categories.
+- Lastly, we can also include exact numbers of the results, which are hard to show in main dashboard due to space limitation.
 
 ![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/sketch2.png){width=100%}
 
 ### 3.2. Final dashboard of visualisation using Tableau.
 
 All the charts we designed above were rearranged for one cleaned dashboard
-![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/D.10.png)
-[Figure5 : Final Dashboard](https://public.tableau.com/profile/jihun.nam#!/vizhome/Covid_vaccine_dashboard_age_edit/DashboardFinal?publish=yes "click to link")
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/dashboard_final2.png)
+[](https://public.tableau.com/profile/jihun.nam#!/vizhome/Covid_vaccine_dashboard_age_edit/DashboardFinal?publish=yes "click to link")
 
 ## 4. Step-by-step preparation of visualization 
 
@@ -294,6 +303,14 @@ The number of respondents are different among countries. Therefore, we cannot co
 
 ![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/T.8.png){width=70%}
 
+9. Create a new worksheet for showing total number of respondents by country. Drag and drop "Country" field into Rows and "CNT" onto "Label" button. Also change the color shading to make clearer.
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/respondent1.png){width=70%}
+
+10. Click "Country" field to sort by "(CI) % of Strongly agree"
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/respondent2.png){width=70%}
+
 ### 4.6. Create tooltip charts for showing detail of answers
 
 1. Changes of answers through weeks
@@ -390,29 +407,45 @@ The number of respondents are different among countries. Therefore, we cannot co
 ![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/D.7.png){width=70%}
 
 
-8. Drag and drop two more "A Text" objects between "Answer" label box and two charts. Then type titles for the charts, repectively.
+8. Drag and drop more "A Text" objects between "Answer" label box and chart. Then type titles repectively.
 
-![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/d.8.png){width=70%}
-8. Lastly, drag and drop "A Text" objects below the two charts and type data source information.
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/dashboard_1.png){width=70%}
 
-![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/d.9.png){width=70%}
+9. Drag and drop "CI_chart_respondents" next to "CI_chart".
 
-9. The final Dashboard
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/dashboard_2.png){width=70%}
 
-![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/D.10.png){width=70%}
+10. The final Dashboard
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/dashboard_final2.png){width=100%}
 
 ## 5. Major observations 
 
-Labaging
+### 5.1. People in EU are more likely to get vaccination comapred to that in Asian
 
-### 5.1. Changes of the share of residents population
-- As illustrated in the statement in original chart, the share of senior population is getting larger than before. The share of residents aged 55-64 and 65&over rose from 14% (2009) to 17% (2019) and from 11% (2009) to 17%(2019), respectively. Whereas, the share of young age groups declined from 59% (2009) to 52% (2019). This fact affects to changes of the share of resident labour force consequently, because the working young population cohorts moving into the senior group. 
+- As seen in the 
 
-### 5.2. Changes of LFPR
-- Overall LFPR (Labour Force Participation Rate) rose since 2009, however, among 55-64 and 65&over age group's increments were relatively huge than 25-54 age cohort. Especially, 65&over cohort's fluctuation was norteworthy, which means that more seniors take part in work activity than 10 years ago. Also, we can assumes that the fact of big changes of LFPR affects to the share of resident labour force. 
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/ob.1.png){width=100%}
 
-### 5.3. Changes of the share of resident labour force
-- Consequently, this whole report and charts were written to explain that Labour force in Singapore is aging. As seen in the dashboard, 9.1% of the shares of resident labour force in aged 55&over, orange colored part in Figure3, rose from 2009 to 2019. As a result, median age of residents in the labour force rose from 41 years in 2009 to 44 years in 2019.
+### 5.2. The older, the more agree to vaccination
+
+- As seen below, 
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/ob.2.png){width=50%}
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/ob.3.png){width=100%}
+
+### 5.3. The portion of agree to vaccination increases over time
+
+- As seen below, 
+
+Q2. I am worried about getting COVID19
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/ob.7q2.png){width=100%}
+Q3. I am worried about potential side effects of a COVID19 vaccine
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/ob.6q3.png){width=100%}
+
 
 #### The END
 
