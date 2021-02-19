@@ -421,31 +421,37 @@ The number of respondents are different among countries. Therefore, we cannot co
 
 ## 5. Major observations 
 
-### 5.1. People in EU are more likely to get vaccination comapred to that in Asian
+### 5.1. People in EU are more likely to get vaccination comapred to that in Asia
 
-- As seen in the 
+- If we see below dashboard we made earlier, average scores of the survey answer to "Q1. if a Covid-19 vaccine were made available to me this week, I would definitely get it" are varied by country. If you see the charts closely, people in EU countries are more likely to get vaccine, almost above average socre value of 3.39
+- Especially, the average scores of answer in United Kingdom is higher than that in Japan by 0.9.
+- Also, UK and Denmark people are more likely think that they strongly want to get vaccine if they are available. 
 
 ![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/ob.1.png){width=100%}
 
 ### 5.2. The older, the more agree to vaccination
 
-- As seen below, 
+- As seen below, seniors (age group of 60-69) are more likely to get vaccine than relatively young group (age group of 30-39).
+- Also, this result can be seen if we see the chart of "Answers by Employ status". The retired are likely to get vaccine than other groups.
+
+"Q1. if a Covid-19 vaccine were made available to me this week, I would definitely get it:"
 
 ![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/ob.2.png){width=50%}
 
 ![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/ob.3.png){width=100%}
 
-### 5.3. The portion of agree to vaccination increases over time
+### 5.3. As times go by, people think more positively toward vaccine and government
 
-- As seen below, 
+- As seen below, worries about potential side effects of vaccine are getting smaller. 
+- Also, people believe their government health authorities more than before.
 
-Q2. I am worried about getting COVID19
-
-![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/ob.7q2.png){width=100%}
 Q3. I am worried about potential side effects of a COVID19 vaccine
 
 ![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/ob.6q3.png){width=100%}
 
+Q4. I believe government health authorities in my country will provide me with an effective COVID19 vaccine
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/ob.8q4.png){width=100%}
 
 #### The END
 
