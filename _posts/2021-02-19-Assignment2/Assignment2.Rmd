@@ -99,7 +99,7 @@ All the charts we designed above were rearranged for one cleaned dashboard
 
 ![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/dashboard_final2.png)
 
-[Final Dashboard](https://public.tableau.com/profile/jihun.nam#!/vizhome/Covid_vaccine_dashboard_age_edit/DashboardFinal?publish=yes "click to link")
+[Final Dashboard](https://public.tableau.com/profile/jihun.nam#!/vizhome/Covid_vaccine_dashboard_age_edit/DashboardFinal "click to link")
 
 ## 4. Step-by-step preparation of visualization 
 
