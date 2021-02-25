@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2021-02-25-visual-analytics-project-proposal/",
+    "title": "Visual Analytics Project Proposal",
+    "description": "Understanding Key Stories Covered In the Media and How Readers Engaged With News",
+    "author": [
+      {
+        "name": "Atticus Foo, Gerald Chee & Nam Jihun",
+        "url": "https://public.tableau.com/profile/atticusfoo#!/"
+      }
+    ],
+    "date": "2021-02-25",
+    "categories": [],
+    "contents": "\n\nContents\n1. Motivations and Objective\n2. Data\n3. Visualisation Features\n3.1 Topic Classification\n3.2 Time Series Analysis\n3.3 Anomaly Detection\n\n4. Challenges\n4.1 Classifying unstructured data\n4.2 Data cleaning for unstructured data\n\n5. Annex – proposed sites for analysis\n\nProject Proposal1. Motivations and Objective\nAs we become more and more inundated with news from various digital sources today, understanding what the key stories are across the digital spectrum is becoming more and more challenging. As such, we are interested in understanding how to best present a visual snapshot of the key stories that are covered in local media and identifying how readers engaged with the news.\n2. Data\nTo do this, we will be analysing English news articles published by 9 local news sites for the year of 2020. To identify how readers engaged with each article, we will be using Facebook engagement data (Likes, Shares and Comments) retrieved from CrowdTangle and Prrt. This amounts to 94,841 news articles and its corresponding Facebook engagement data.\n3. Visualisation Features\nWe plan to feature three visualisation modules: - Topic Classification in order to understand key news topics - Time series analysis in order to identify current trends and forecast future ones - Anomaly detection in order to detect key news items\n3.1 Topic Classification\nTopic ClassificationTopic classification could be the most challenging as it would require text analytics. This is due both to our unfamiliarity with text analytics as well as the localised nature of our news headlines – even if it is in the English language.\n3.2 Time Series Analysis\nTime Series AnalysisAs we will be looking at an entire year’s worth of data, we should be able to statistically quantify past trends. Using this, we should also be able to forecast future trends, such as predicting the most popular days for news engagement.\n3.3 Anomaly Detection\nAnomaly DetectionAs it is important to quickly sift through all the noise to identify news trends, we propose building an anomaly detection visualisation that could present articles that have gone viral. This can be done by identifying if there are engagement rates that have fallen outside the norm.\n4. Challenges\nAt this current stage, we foresee two main challenges for this project. They are:\n4.1 Classifying unstructured data\nMuch of the project relies on being able classify article headlines for further statistical analysis. As identified above, this is our biggest challenge. Dealing with unstructured data will be difficult especially since the team is unfamiliar with text analytics.\nThis will be made tougher as the localised nature of news headlines from local media will mean that we will have less libraries and resources to call upon online.\n4.2 Data cleaning for unstructured data\nThe unstructured nature of the data will also present a second challenge for data cleaning. As much of the data is taken from public scrappers, and Facebook metadata, we have to ensure that there are no duplicates in values as well as odd text in the dataset.\n5. Annex – proposed sites for analysis\nAsia One\nChannel News Asia\nMothership\nMust Share News\nRice Media\nStraits Times\nThe Online Citizen\nToday Online\nYahoo SG\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-02-25T14:21:42+08:00",
+    "input_file": "visual-analytics-project-proposal.utf8.md"
+  },
+  {
     "path": "posts/2021-02-19-Assignment2/",
     "title": "ISSS608 AY2020-21_T2 Visual Analytic DataViz Makeover2",
     "description": "Description: Visualisation and analysis of willingness of the public on Covid-19 vaccination",
