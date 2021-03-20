@@ -23,7 +23,7 @@ knitr::opts_chunk$set(echo = FALSE)
 This post will show how to visualise the spatio-temporal patterns of armed conflict in selected South-east Asia countries between 2015-2020. The original chart can be found at [South-east Asia Armed Conflict Analysis](https://public.tableau.com/profile/tskam#!/vizhome/South-eastAsiaArmedConflictAnalysis/South-eastAsiaArmedConflictAnalysis)
 Firstly, we will criticize the original charts then show how to make better visualization from the same data set.
 
-- Original chart
+### 1.1. Original chart
 
 ![Original visualisation](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/original.png)
 
@@ -32,12 +32,7 @@ In this Analysis, below codebook and data files were used for analysis.
 - Raw Data [Southeast-Asia_2010-2020_Oct31.xlsx](Southeast-Asia_2010-2020_Oct31.xlsx)
 - Armed Conflict Location & Event Data Project (ACLED) Codebook  [codebook](ACLED_Codebook_2019FINAL.docx.pdf)
 
-- Final Dashboard
-
-![Final Dashboard](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/finaldashboard.png)
-
-[Final Dashboard (Tableau link)](https://public.tableau.com/views/Makeover3_16162338324360/Dashboard_final?:language=en&:display_count=y&:origin=viz_share_link)
-
+### 1.2. Skim of raw data
 
 ```{r echo=FALSE}
 library('readxl')
@@ -45,7 +40,6 @@ raw_df <- read_excel("Southeast-Asia_2010-2020_Oct31.xlsx")
 
 ```
 
-### 1.1. Skim of raw data
 
 ```{r, out.width=0.5}
 skimr::skim(raw_df)
@@ -53,11 +47,17 @@ skimr::skim(raw_df)
 ```
 
 
-### 1.2. Data columns of raw data
+### 1.3. Data columns of raw data
 
 ![code](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/codebook1.png)
 
 ![code](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/codebook2.png)
+
+### 1.4. Final Dashboard
+
+![Final Dashboard](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/finaldashboard.png)
+
+[Final Dashboard (Tableau link)](https://public.tableau.com/views/Makeover3_16162338324360/Dashboard_final?:language=en&:display_count=y&:origin=viz_share_link)
 
 --------------------------------------------------------------------------------
 
