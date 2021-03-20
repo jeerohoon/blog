@@ -2,7 +2,7 @@
 title: "ISSS608 AY2020-21_T2 Visual Analytic DataViz Makeover3"
 description: |
 
-  Description: South-east Asia Armed Conflict Analysis
+  Description: Visualisation Report: Armed Conflict in South-east Asia
 author:
   - name: Jihun NAM
   - email: jihun.nam.2020@mitb.sum.edu.sg
@@ -31,6 +31,13 @@ In this Analysis, below codebook and data files were used for analysis.
 
 - Raw Data [Southeast-Asia_2010-2020_Oct31.xlsx](Southeast-Asia_2010-2020_Oct31.xlsx)
 - Armed Conflict Location & Event Data Project (ACLED) Codebook  [codebook](ACLED_Codebook_2019FINAL.docx.pdf)
+
+- Final Dashboard
+
+![Final Dashboard](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/finaldashboard.png)
+
+[Final Dashboard (Tableau link)](https://public.tableau.com/views/Makeover3_16162338324360/Dashboard_final?:language=en&:display_count=y&:origin=viz_share_link)
+
 
 ```{r echo=FALSE}
 library('readxl')
@@ -94,7 +101,6 @@ skimr::skim(raw_df)
 - 4) Country name on the map: When readers select a country, country's name is disappear due to many dots. Country names should be recognized more clearly on the map.
 
 ![lefthand](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/lefthand.png){width=50%}
-
 
 ### 2.3. Interactive
 
