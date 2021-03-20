@@ -1,0 +1,327 @@
+---
+title: "ISSS608 AY2020-21_T2 Visual Analytic DataViz Makeover3"
+description: |
+
+  Description: South-east Asia Armed Conflict Analysis
+author:
+  - name: Jihun NAM
+  - email: jihun.nam.2020@mitb.sum.edu.sg
+
+date: 03-21-2021
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## 1. Overview
+
+This post will show how to visualise the spatio-temporal patterns of armed conflict in selected South-east Asia countries between 2015-2020. The original chart can be found at [South-east Asia Armed Conflict Analysis](https://public.tableau.com/profile/tskam#!/vizhome/South-eastAsiaArmedConflictAnalysis/South-eastAsiaArmedConflictAnalysis)
+Firstly, we will criticize the original charts then show how to make better visualization from the same data set.
+
+- Original chart
+
+![Original visualisation](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/original.png)
+
+In this Analysis, below codebook and data files were used for analysis.
+
+- Raw Data [Southeast-Asia_2010-2020_Oct31.xlsx](Southeast-Asia_2010-2020_Oct31.xlsx)
+- Armed Conflict Location & Event Data Project (ACLED) Codebook  [codebook](ACLED_Codebook_2019FINAL.docx.pdf)
+
+```{r echo=FALSE}
+library('readxl')
+raw_df <- read_excel("Southeast-Asia_2010-2020_Oct31.xlsx")
+
+```
+
+### 1.1. Skim of raw data
+
+```{r, out.width=0.5}
+skimr::skim(raw_df)
+
+```
+
+
+### 1.2. Data columns of raw data
+
+![code](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/codebook1.png)
+
+![code](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/codebook2.png)
+
+--------------------------------------------------------------------------------
+
+## 2. Critique of the original charts
+
+### 2.1. Clarity
+
+- 1) According to classification of ACLED event types in the codebook, there are three "General" categories and each category can be divided into several "Event type". However, the original map only shows "Event Type", without showing "General" groups. For this reason, readers cannot easily recognise the difference, in terms of severity of events.
+
+![eventType](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/eventtype.png)
+
+- 2) Mark as a single dot: Every event is represented by single dot with different colors. However, if several events occured at the same place, it would be hard to count how many events were accured just by the map. 
+
+- 3) Time: Also, single dots do not tell when the events occured. This map only shows the events occured between 2015 to 2020. 
+
+![lefthand](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/lefthand.png){width=50%}
+
+
+- 4) "Count of Sheet1": As seen below, "Count of Sheet1", y-axis label is ambiguous, because readers do not know "Sheet1". This label should be changed with proper name.
+
+![eventyaxis](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/eventyaxis.png){width=30%}
+
+- 5) "Event Date": As seen below, the label of x-axis, "Event Date", does not properly represent meaning of values of x-axis. The x-axis value only represents the year and there is no information about the sepecific date.
+
+![eventyaxis2](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/right_graph_y.png){width=50%}
+
+- 6) Title of line graph "Armed Conflict Event by Type": This title does not represent the whole meaning of the chart because it also shows the trend by time.
+
+
+### 2.2. Aesthetics
+
+- 1) Location of legend: The legend locats on the right side, so it's hard to understand at a glance while mapping each of dot and the legend.
+
+![legend](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/legend.png){width=40%}
+- 2) Range of y axis: As seen below graph, the ranges of each event's y-axis are not consistant. Readers will be confused when looking at the graph because there the numbers are not uniform. The values should be compared up and down each of the graph.
+
+![eventyaxis2](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/right_graph_y.png){width=40%}
+
+- 3) Color of line chart: As seen above, all the line graphs have the same color regardless of the event type. 
+
+- 4) Country name on the map: When readers select a country, country's name is disappear due to many dots. Country names should be recognized more clearly on the map.
+
+![lefthand](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/lefthand.png){width=50%}
+
+
+### 2.3. Interactive
+
+- 1) Tool tip for a dot: When readers hover over to the dots, only four information appeared in a form of tool tip. However, more valueable information should be popped up for readers. Especially, latitude and longitude are not very helful for readers.
+
+![interactive1](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/interactive_map.png){width=50%}
+
+- 2) Tool tip for a line graph: When readers hover over to the line graph, only three information appeared in a form of tool tip. As described above, more valueable information should be popped up for readers. Especially, "Event Type" and "Year of Event Date" are redundant because these values can easily find in y-axis and x-axis in a graph.
+
+![interactive2](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/interactive_graph.png){width=50%}
+
+- 3) Radio button for selection of country: In order to compare data by countries, legend(filter) should be changed from radio button to check box.
+
+![interactive3](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/interactive_country.png){width=30%}
+
+
+
+## 3. Alternative suggestion of the graph
+
+### 3.1. Sktechs of graphical presentation and advantages
+
+#### 1) Sketch1 - Dashboard
+
+
+#### 2) Sketch2 - Tooltips
+
+
+### 3.2. Final dashboard of visualisation using Tableau.
+
+All the charts we designed above were rearranged for one cleaned dashboard.
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/dashboard_final2.png)
+
+[Final Dashboard](https://public.tableau.com/profile/jihun.nam#!/vizhome/Covid_vaccine_dashboard_age_edit/DashboardFinal "click to link")
+
+
+
+## 4. Step-by-step preparation of visualization 
+
+### 4.1. Upload raw data set in Tableau
+
+- Upload raw data "Southeast-Asia_2010-2020_Oct31.xlsx" into Tableau "Data Source".
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/d0.png){width=50%}
+
+### 4.2. Make necessary fields clean and transform for analysis
+
+1. Move up "Latitude" and "Longitude" filed from Measure pannel to Attribute pannel.
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/d1.png){width=30%}
+
+2. Create a Hierachy "Region", "Country" and "Adminn1" field for geospatial analysis.
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/d2.png){width=30%}
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/d3.png){width=30%}
+
+3. Make sure to change  'Admin1" field type to "Geographic Role" > "State/Province".
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/d4.png){width=30%}
+
+4. Create a group for aggregate "Event Type" for further analysis".
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/d5(create group).png){width=30%}
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/d6.png){width=30%}
+
+
+### 4.3. Create Map chart to show geospatial analysis
+
+1. Put all necessary fields into Pannel as below.
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/m1.png){width=60%}
+
+2. Put "Country", "Event Tpye", and "Year". Then click "Show Filter" to see in the filter pannel
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/m2.png){width=30%}
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/cnt7_add event type in filters.png){width=30%}
+
+3. Go to legend area and change title of "Event Type" legend
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/m3_edit legend title.png){width=30%}
+
+4. Go to "Year" legend and click small triangle right corner, then click "Single Value (slider)"
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/m5_show filter and change filter type.png){width=30%}
+
+
+5. Go to Tool tip menu in "Marks" pannel and edti as below
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/m6_insert location into marks tooltip and edit tooltip.png){width=40%}
+
+### 4.4. Create bar chart to show trend of number of events comapring by countries
+
+1. Put all necessary fields into Pannel as below.
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/cnt1.png){width=50%}
+
+2. Click "Show Filter" to show in the filter pannel.
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/cnt7_add event type in filters.png){width=30%}
+
+3. Right click x-axis and click "Edit Axis" then delete "Title".  
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/cnt2_delet Axis Titles.png){width=40%}
+
+4. Right click label of columns, "Event Date", and check "Hide Field Labels for Columns"
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/cnt3_hide field label of y axis.png){width=60%}
+
+5. Go to filter and change the legend title
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/cnt4_edit legend no of event.png){width=30%}
+
+6. Right click title, "Sheet 2(2)" and check "Hide Title"
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/cnt4_hide title.png){width=30%}
+
+7. Sort "Country" by "CNT(sheet1)" field
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/cnt5_sort country in order of cnt.png){width=30%}
+
+8. Go to filter pannel and click small triangle in "Year" filter. Then check "Multiple Values (dropdown)"
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/cnt6_add year in filter and change type.png){width=30%}
+
+9. Change order of "Event Type" by clicking "Sort" > "Manual" option.
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/cnt9_change order of event type.png){width=30%}
+
+### 4.5. Create bar chart to show trend of number of fatalities comapring by countries
+
+1. Duplicate "No of Event" sheet we created above, and rename "No of Fatality"
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/fa1_duplicate cnt sheet.png){width=30%}
+
+2. Drag and drop "Fatalities" measures onto "CNT(Sheet1)" to change the target value.
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/fa2_drag and drop fatality measure onto existed cnt measure.png){width=60%}
+
+3. Again go to x-axis and right click. Then delete "Title".
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/fa3_in edit axis, delete axis titles.png){width=50%}
+
+### 4.6. Create tooltips for trend of number of events and fatalities
+
+1. Duplicate "No of Event" sheet we created above, and rename "No of Event_tooltip"
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/fa1_duplicate cnt sheet.png){width=30%}
+
+2. Click "+" sign and extend fileds to "Month"
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/cnt12_tooltip.png){width=30%}
+
+3. Drag and drop all fields as below Then change graph type to "Line"
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/cnt13_tooltip.png){width=50%}
+
+4. Drag and drop "Event Type" and "CNT(Sheet(1))" onto "Label" in Marks. Click "Label" button and change setting as below.
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/cnt15_tooltip.png){width=40%}
+
+5. Duplicate above sheet and rename to "No of Fatality_tooltip". Then change "CNT(Sheet1(1))" to "Fatality" in Rows.
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/fa5_tooltip.png){width=40%}
+
+6. Go back to "No of Event" sheet and click "Tooltip". Then type as below.
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/cnt14_tooltip.png){width=40%}
+
+7. Go back to "No of Fatality" sheet and click "Tooltip". Then type as below.
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/fa6.png){width=40%}
+
+### 4.8. Create Dashboard
+
+1. Put all necessary fields into Pannel and readjust size of each chart as below. 
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/dash0.png){width=50%}
+
+2. Click "More option" in "Year" filter and go to "Selected Worksheets..."
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/dash3.png){width=50%}
+
+3. Check every worksheet as below. 
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/dash5.png){width=50%}
+4. Do the same action as above for "Event Type" filter in "1. The number of armed conflict events  and fatalities (Jan 2010 to Oct 2020)"
+
+5. Other filters in "2. Location and the number of armed conflict events (Jan 2010 to Oct 2020)" do not need to change filter setting. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
