@@ -122,7 +122,9 @@ skimr::skim(raw_df)
 
 #### 1) Sketch1 - Dashboard
 
-1. 
+1. In order to show the simliar level of "Event Type", we can paint in similar colors within the same "General type".
+
+2. 
 
 ![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/a1.png){width=70%}
 
@@ -144,9 +146,9 @@ skimr::skim(raw_df)
 
 All the charts we designed above were rearranged for one cleaned dashboard.
 
-![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-02-19-Assignment2/capture/dashboard_final2.png)
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/finaldashboard.png)
 
-[Final Dashboard](https://public.tableau.com/profile/jihun.nam#!/vizhome/Covid_vaccine_dashboard_age_edit/DashboardFinal "click to link")
+[Final Dashboard](https://public.tableau.com/profile/jihun.nam#!/vizhome/Makeover3_16162338324360/Dashboard_final "click to link")
 
 
 
