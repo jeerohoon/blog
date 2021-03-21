@@ -123,25 +123,31 @@ skimr::skim(raw_df)
 
 #### 1) Sketch1 - Dashboard
 
-1. In order to show the simliar level of "Event Type", we can paint in similar colors within the same "General type".
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/a0.png){width=90%}
 
-2. 
+1. In order to show the simliar level of "Event Type", we can paint in similar colors within the same "General type": "Violent events", "Demonstrations", and "Non-violent actions".
 
-![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/a1.png){width=70%}
+2. In order to compare not only the number of events, but also the number of fatalities, we can create stack bar charts by countries and years. By doing so, we can easily recognise the changes in time at a glance.
 
-2. 
+3. We can make filters of "Year" and "Event Type" to compare values easily.
 
-![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/a2.png){width=70%}
+4. The range of x-axis is uniform, so readers also can easily compare the values at a glance.
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/a2.png){width=90%}
+
+5. Show differences in the number of events, we can place different sizes of dots according to the number of events occured on the locations. 
+
+6. Also, put filters of "Year", and "Event type" on the right handside to see the specific information.
 
 #### 2) Sketch2 - Tooltips
 
-1. 
+1. Bar charts' tooltips: In order to show the trend of the number of events occured and fatalities, put a line graph in a tooltip function. 
 
-![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/a3.png){width=30%}
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/a3.png){width=50%}
 
-2. 
+2. Map's tooltip: In order to show every elements in each location information clearly, put related fields and values into toolbox.  
 
-![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/a4.png){width=30%}
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/a5.png){width=50%}
 
 ### 3.2. Final dashboard of visualisation using Tableau.
 
@@ -149,7 +155,7 @@ All the charts we designed above were rearranged for one cleaned dashboard.
 
 ![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/finaldashboard.png){width=90%}
 
-[Final Dashboard](https://public.tableau.com/profile/jihun.nam#!/vizhome/Makeover3_16162338324360/Dashboard_final "click to link")
+Go to the Final Dashboard -> [Final Dashboard](https://public.tableau.com/profile/jihun.nam#!/vizhome/Makeover3_16162338324360/Dashboard_final "click to link")
 
 
 
@@ -205,7 +211,7 @@ All the charts we designed above were rearranged for one cleaned dashboard.
 
 5. Go to Tool tip menu in "Marks" pannel and edti as below
 
-![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/m6_insert location into marks tooltip and edit tooltip.png){width=40%}
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/m7.png){width=50%}
 
 ### 4.4. Create bar chart to show trend of number of events comapring by countries
 
@@ -299,7 +305,7 @@ All the charts we designed above were rearranged for one cleaned dashboard.
 
 ![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/dash3.png){width=50%}
 
-3. Check every worksheet as below. 
+3. Select every worksheet as below. 
 
 ![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/dash5.png){width=50%}
 4. Do the same action as above for "Event Type" filter in "1. The number of armed conflict events  and fatalities (Jan 2010 to Oct 2020)"
@@ -307,42 +313,21 @@ All the charts we designed above were rearranged for one cleaned dashboard.
 5. Other filters in "2. Location and the number of armed conflict events (Jan 2010 to Oct 2020)" do not need to change filter setting. 
 
 
+## 5. Major observations 
 
+### 5.1. The number of events and fatalities by country and year
 
+We can observe that the number of armed conflict events and fatalities changed over time. In Philippines, especially, we can see the trends decreasing over time in "Violence against civilians". The number of fatalities was also dcreased between 2016 and 2020. However, "Protests" in Indonesia show an increasing trend from 2016 to 2020.   
 
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/o2.png){width=90%}
 
+### 5.2. Frequency of the events occured in the same place (average)
 
+Armed conflict events have taken place in various places in each country. we want see how often events occured in one location. As seen the table below, the value can be calculated as "The number of locations events event occured" divided by "The number of locations events event occured(Distinct)". By using the value, we can observe that "Protests" occured more frequently in the same place than other events in Philippines and Indonesia. However, in Myanmar, "Battles" occured more frequently in the same place than other events. 
 
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/o6.png){width=90%}
 
+#### The END
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+--------------------------------------------------------------------------------------------------------------------
 
