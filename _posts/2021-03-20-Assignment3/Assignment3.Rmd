@@ -147,7 +147,7 @@ skimr::skim(raw_df)
 
 All the charts we designed above were rearranged for one cleaned dashboard.
 
-![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/finaldashboard.png)
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/finaldashboard.png){width=90%}
 
 [Final Dashboard](https://public.tableau.com/profile/jihun.nam#!/vizhome/Makeover3_16162338324360/Dashboard_final "click to link")
 
