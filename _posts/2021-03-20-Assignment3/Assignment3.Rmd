@@ -116,17 +116,29 @@ skimr::skim(raw_df)
 
 ![interactive3](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/interactive_country.png){width=30%}
 
-
-
 ## 3. Alternative suggestion of the graph
 
 ### 3.1. Sktechs of graphical presentation and advantages
 
 #### 1) Sketch1 - Dashboard
 
+1. 
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/a1.png){width=70%}
+
+2. 
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/a2.png){width=70%}
 
 #### 2) Sketch2 - Tooltips
 
+1. 
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/a3.png){width=30%}
+
+2. 
+
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/a4.png){width=30%}
 
 ### 3.2. Final dashboard of visualisation using Tableau.
 
