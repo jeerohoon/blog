@@ -49,13 +49,13 @@ skimr::skim(raw_df)
 
 ### 1.3. Data columns of raw data
 
-![code](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/codebook1.png)
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/codebook1.png)
 
-![code](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/codebook2.png)
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/codebook2.png)
 
 ### 1.4. Final Dashboard
 
-![Final Dashboard](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/finaldashboard.png)
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/finaldashboard.png)
 
 [Final Dashboard (Tableau link)](https://public.tableau.com/views/Makeover3_16162338324360/Dashboard_final?:language=en&:display_count=y&:origin=viz_share_link)
 
@@ -67,22 +67,22 @@ skimr::skim(raw_df)
 
 - 1) According to classification of ACLED event types in the codebook, there are three "General" categories and each category can be divided into several "Event type". However, the original map only shows "Event Type", without showing "General" groups. For this reason, readers cannot easily recognise the difference, in terms of severity of events.
 
-![eventType](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/eventtype.png)
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/eventtype.png)
 
 - 2) Mark as a single dot: Every event is represented by single dot with different colors. However, if several events occured at the same place, it would be hard to count how many events were accured just by the map. 
 
 - 3) Time: Also, single dots do not tell when the events occured. This map only shows the events occured between 2015 to 2020. 
 
-![lefthand](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/lefthand.png){width=50%}
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/lefthand.png){width=50%}
 
 
 - 4) "Count of Sheet1": As seen below, "Count of Sheet1", y-axis label is ambiguous, because readers do not know "Sheet1". This label should be changed with proper name.
 
-![eventyaxis](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/eventyaxis.png){width=30%}
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/eventyaxis.png){width=30%}
 
 - 5) "Event Date": As seen below, the label of x-axis, "Event Date", does not properly represent meaning of values of x-axis. The x-axis value only represents the year and there is no information about the sepecific date.
 
-![eventyaxis2](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/right_graph_y.png){width=50%}
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/right_graph_y.png){width=50%}
 
 - 6) Title of line graph "Armed Conflict Event by Type": This title does not represent the whole meaning of the chart because it also shows the trend by time.
 
@@ -91,30 +91,31 @@ skimr::skim(raw_df)
 
 - 1) Location of legend: The legend locats on the right side, so it's hard to understand at a glance while mapping each of dot and the legend.
 
-![legend](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/legend.png){width=40%}
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/legend.png){width=30%}
+
 - 2) Range of y axis: As seen below graph, the ranges of each event's y-axis are not consistant. Readers will be confused when looking at the graph because there the numbers are not uniform. The values should be compared up and down each of the graph.
 
-![eventyaxis2](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/right_graph_y.png){width=40%}
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/right_graph_y.png){width=50%}
 
 - 3) Color of line chart: As seen above, all the line graphs have the same color regardless of the event type. 
 
 - 4) Country name on the map: When readers select a country, country's name is disappear due to many dots. Country names should be recognized more clearly on the map.
 
-![lefthand](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/lefthand.png){width=50%}
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/lefthand.png){width=50%}
 
 ### 2.3. Interactive
 
 - 1) Tool tip for a dot: When readers hover over to the dots, only four information appeared in a form of tool tip. However, more valueable information should be popped up for readers. Especially, latitude and longitude are not very helful for readers.
 
-![interactive1](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/interactive_map.png){width=50%}
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/interactive_map.png){width=30%}
 
 - 2) Tool tip for a line graph: When readers hover over to the line graph, only three information appeared in a form of tool tip. As described above, more valueable information should be popped up for readers. Especially, "Event Type" and "Year of Event Date" are redundant because these values can easily find in y-axis and x-axis in a graph.
 
-![interactive2](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/interactive_graph.png){width=50%}
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/interactive_graph.png){width=40%}
 
 - 3) Radio button for selection of country: In order to compare data by countries, legend(filter) should be changed from radio button to check box.
 
-![interactive3](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/interactive_country.png){width=30%}
+![](/Users/1109103/Google Drive/SMU_2021_1st/Visual/blog/_posts/2021-03-20-Assignment3/interactive_country.png){width=20%}
 
 ## 3. Alternative suggestion of the graph
 
